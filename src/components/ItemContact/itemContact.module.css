@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-right: 5px;
+
+}
+
+.title {
+  font-size: 18px;
+  font-weight: normal;
+
+
+}
+
+.btn {
+  width: 40px;
+  height: 30px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #5f5e5e;
+  color: #e0dbdb;
+}
+
+.btn:hover{
+  transform: scale(1.05);
+}
