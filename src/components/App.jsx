@@ -49,7 +49,7 @@ export class App extends Component {
   };
 
   checkDoubleContact = (inputData) => {
-    return this.state.contacts.find(contact => contact.name === inputData.name);
+    return this.state.contacts.find(contact => contact.name.toLowerCase() === inputData.name.toLowerCase());
   };
 
   onVisibleContact = () => {
