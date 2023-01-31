@@ -32,6 +32,7 @@ export class Form extends Component {
           <input
             type='text'
             name='name'
+            placeholder='Enter name'
             value={this.state.name}
             onChange={this.handleInputChange}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -46,6 +47,7 @@ export class Form extends Component {
             onChange={this.handleInputChange}
             type='tel'
             name='phone'
+            placeholder='Enter phone number'
             pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
             title='Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
             required

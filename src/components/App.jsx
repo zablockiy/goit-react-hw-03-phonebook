@@ -12,6 +12,21 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem("my-contacts"))
+   if (contacts?.length){
+     this.setState({contacts})
+   }
+  }
+
+  componentDidUpdate(prevProps,prevState) {
+    const {contacts} = this.state
+    if (prevState.contacts.length!==contacts.length){
+      localStorage.setItem("my-contacts", JSON.stringify(contacts))
+    }
+
+  }
+
   handleInputChange = (event) => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
@@ -38,8 +53,9 @@ export class App extends Component {
   };
 
   onVisibleContact = () => {
-    const normalized = this.state.filter.toLowerCase();
-    return (this.state.contacts.filter(contact => contact.name.toLowerCase().includes(normalized)));
+    const { contacts, filter } = this.state;
+    const normalized = filter.toLowerCase();
+    return (contacts.filter((contact) => contact.name.toLowerCase().includes(normalized)));
   };
 
   onDeleteContact = (id) => {
